@@ -9,7 +9,7 @@
 	<audio id="playerF1" muted="true" autoplay="true">
 		<source src="ressources/TestVocal.ogg" type="audio/ogg">
 	</audio>
-	<audio id="playerF2" muted="true">
+	<audio id="playerF2" muted="true" autoplay="true">
 		<source src="ressources/TestVocal2.ogg" type="audio/ogg">
 	</audio>
 	<audio id="playerF3">
@@ -22,25 +22,27 @@
 		</video>
 	</div>
 
-	<svg width="683px" height="384px"><!-- w = 1366 h = 768 -->
-		<defs>
-			<g id="Fenetre">
-				<rect x="0px" y="0px" width="123" height="93"/><!-- w = 247, h = 186 -->
-			</g>
-		</defs>
-		<use xlink:href="#Fenetre" x="97px" y="19px" fill-opacity="0.1" onmouseover="windowOneOn('playerF1')" onmouseout="windowOneOff('playerF1')" /><!-- x = 195 y = 38 -->
-		<use xlink:href="#Fenetre" x="464px" y="19px" fill-opacity="0.1" onmouseover="windowTwoOn('playerF2')" onmouseout="windowTwoOff('playerF2')" /><!-- x = 929 y = 38 -->
-		<use xlink:href="#Fenetre" x="97px" y="154px" fill-opacity="0.1" /><!-- x = 195 y = 308 -->
-		<use xlink:href="#Fenetre" x="464px" y="154px" fill-opacity="0.1" /><!-- x = 929 y = 308 -->
-	</svg>
-
+	<div class="svg-container">
+		<svg viewBox="0 0 1366 768" preserveAspectRatio="xMinYMin meet" class="svg-content"><!-- w =  h =  -->
+			<defs>
+				<g id="Fenetre">
+					<rect x="0px" y="0px" width="540" height="350"/><!-- w = , h =  -->
+				</g>
+			</defs>
+			<use xlink:href="#Fenetre" x="50px" y="0px" fill-opacity="0.1" onmouseover="windowOn('playerF1')" onmouseout="windowOff('playerF1')" /><!-- x =  y =  -->
+			<use xlink:href="#Fenetre" x="810px" y="0px" fill-opacity="0.1" onmouseover="windowOn('playerF2')" onmouseout="windowOff('playerF2')" /><!-- x = 929 y = 38 -->
+			<use xlink:href="#Fenetre" x="50px" y="360px" fill-opacity="0.1" /><!-- x = 195 y = 308 -->
+			<use xlink:href="#Fenetre" x="810px" y="360px" fill-opacity="0.1" /><!-- x = 929 y = 308 -->
+		</svg>
+	</div>
+	
 	<script type="text/javascript">
 		var aud = document.getElementById("playerF1");
 		var aud2 = document.getElementById("playerF2");
-		aud.onended = function() {
+		/*aud.onended = function() {
 			aud2.play();
-		    alert("The audio has ended");
-		};
+		    //alert("The audio has ended");
+		};*/
 	</script>
 </body>
 </html>
